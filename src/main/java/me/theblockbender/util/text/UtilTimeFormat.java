@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * @author TimeStamps
+ * @author TimeStamps & TheBlockBender / JustDJplease
  * https://www.spigotmc.org/members/timestamps.329446/
+ * https://www.spigotmc.org/members/justdjplease.120217/
  */
 public class UtilTimeFormat {
 
