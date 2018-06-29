@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author Wesley Smith (WesJD)
+ * @author Wesley Smith
  * https://www.spigotmc.org/members/wesjd.28369/
  * @version 1.0
  */

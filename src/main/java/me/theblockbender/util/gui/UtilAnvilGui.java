@@ -22,6 +22,7 @@ import java.util.function.BiFunction;
  * An anvil gui, used for gathering a user's input
  *
  * @author Wesley Smith
+ * https://www.spigotmc.org/members/wesjd.28369/
  * @since 1.0
  */
 public class UtilAnvilGui {

@@ -9,8 +9,11 @@ import org.bukkit.inventory.Inventory;
 
 /**
  * {@link VersionWrapper} implemented for NMS version 1_12_R2
+ * If you wish to extend this to other NMS, please see the following git repository:
+ * https://github.com/WesJD/AnvilGUI
  *
  * @author Wesley Smith
+ * https://www.spigotmc.org/members/wesjd.28369/
  * @since 1.1.1
  */
 public class Wrapper1_12_R1 implements VersionWrapper {
