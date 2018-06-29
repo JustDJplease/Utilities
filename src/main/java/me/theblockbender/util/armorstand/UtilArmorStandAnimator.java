@@ -39,6 +39,8 @@ import java.util.Set;
  *
  * @author Bram
  * https://www.spigotmc.org/members/bram0101.14381/
+ * Example animation file: http://pastebin.com/wp2YWwz0
+ * Example gif: https://proxy.spigotmc.org/831bda3863ca2b37e849baa10b1d77bd3bfe5d91?url=http%3A%2F%2Fi.giphy.com%2F3o72FgSn1tBIk0nAWs.gif
  */
 public class UtilArmorStandAnimator {
 
