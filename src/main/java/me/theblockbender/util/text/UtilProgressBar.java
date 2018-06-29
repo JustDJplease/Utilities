@@ -14,17 +14,17 @@ public class UtilProgressBar {
      * @param notCompletedColor the colour used to indicate bars that are <b>not</b> completed
      * @return progress bar string
      */
-    public String getProgressBar(int current, int max, int totalBars, String symbol, String completedColor, String notCompletedColor) {
+    public String getProgressBar(int current, int max, int totalBars, char symbol, ChatColor completedColor, ChatColor notCompletedColor) {
         float percent = (float) current / max;
         int progressBars = (int) ((int) totalBars * percent);
         int leftOver = (totalBars - progressBars);
 
         StringBuilder sb = new StringBuilder();
-        sb.append(ChatColor.translateAlternateColorCodes('&', completedColor));
+        sb.append(completedColor);
         for (int i = 0; i < progressBars; i++) {
             sb.append(symbol);
         }
-        sb.append(ChatColor.translateAlternateColorCodes('&', notCompletedColor));
+        sb.append(notCompletedColor);
         for (int i = 0; i < leftOver; i++) {
             sb.append(symbol);
         }
