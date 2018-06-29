@@ -8,7 +8,7 @@ import org.bukkit.entity.Entity;
  * https://www.spigotmc.org/members/heroversewizard.239376/
  */
 public class UtilLookAtTarget {
-    public void makeEntityLookAtTarget(Entity entity, Entity target) {
+    public static void makeEntityLookAtTarget(Entity entity, Entity target) {
         Location entityLocation = entity.getLocation();
         Location targetLocation = target.getLocation();
         float yaw = (float) Math
