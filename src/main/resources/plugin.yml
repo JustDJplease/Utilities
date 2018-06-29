@@ -1,0 +1,6 @@
+name: Util
+main: me.theblockbender.util.Main
+description: Utilities
+author: TheBlockBender
+permission-message: You are not allowed to do this!
+version: ${version}
