@@ -1,7 +1,10 @@
 package me.theblockbender.util.text;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * @author TimeStamps
@@ -10,7 +13,9 @@ import java.util.List;
 public class UtilTimeFormat {
 
     /**
-     * Converts long to string
+     * Converts long to exact string.
+     * Example convertMillisToString: 1 day, 2 hours, 30 minutes.
+     * Example convertMillisToSimpleString: 1 day.
      *
      * @param millis     time
      * @param longFormat true = use abbreviations (m, h, d), false = use full words (minute, hour, day)
@@ -153,5 +158,66 @@ public class UtilTimeFormat {
         if (!commas) return time.replace(",", "");
 
         return time;
+    }
+
+    /**
+     * Converts a millisecond time into a simple (not exact) one word combination.
+     * Example convertMillisToString: 1 day, 2 hours, 30 minutes.
+     * Example convertMillisToSimpleString: 1 day.
+     *
+     * @param time time.
+     * @return Formatted string
+     */
+    private String convertMillisToSimpleString(long time) {
+        if (time == -1)
+            return "Never";
+        String type;
+        int trim = 1;
+        if (time < 60000)
+            type = "SECONDS";
+        else if (time < 3600000)
+            type = "MINUTES";
+        else if (time < 86400000)
+            type = "HOURS";
+        else
+            type = "DAYS";
+        String text;
+        double num;
+        switch (type) {
+            case "DAYS":
+                text = (num = trim(trim, time / 86400000d)) + " Day";
+                break;
+            case "HOURS":
+                text = (num = trim(trim, time / 3600000d)) + " Hour";
+                break;
+            case "MINUTES":
+                text = (num = trim(trim, time / 60000d)) + " Minute";
+                break;
+            case "SECONDS":
+                text = (num = trim(trim, time / 1000d)) + " Second";
+                break;
+            default:
+                text = (int) (num = (int) trim(0, time)) + " Millisecond";
+                break;
+        }
+        if (num != 1)
+            text += "s";
+        return text;
+    }
+
+    /**
+     * Formats a number nicely.
+     *
+     * @param degree Amount of decimal numbers.
+     * @param d      Number to be formatted.
+     * @return Formatted number.
+     */
+    private double trim(int degree, double d) {
+        StringBuilder format = new StringBuilder("#.#");
+        for (int i = 1; i < degree; i++)
+            format.append("#");
+        DecimalFormatSymbols symb = new DecimalFormatSymbols(Locale.US);
+        DecimalFormat twoDForm = new DecimalFormat(format.toString(), symb);
+        return Double.valueOf(twoDForm.format(d));
     }
 }
